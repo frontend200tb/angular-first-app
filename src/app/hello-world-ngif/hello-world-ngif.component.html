@@ -1,0 +1,14 @@
+<h2>My fifth Angular component</h2>
+
+<p>Paragraph below button use directive *ngIf for display content</p>
+<button type="button" (click)="onEditClick()">Make text editable!</button>
+
+<div *ngIf="canEdit; else noEdit">
+    <p>You can edit the following paragraph.</p>
+</div>
+
+<ng-template #noEdit>
+    <p>The following paragraph is read only. Try clicking the button!</p>
+</ng-template>
+
+<p [contentEditable]="canEdit">{{ message }}</p>
